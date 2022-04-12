@@ -4,9 +4,9 @@
 sudo apt-get update && sudo apt-get install --yes --no-install-recommends ca-certificates build-essential git libssl-dev curl cpio bspatch vim gettext bc bison flex dosfstools kmod jq
 
 root=`pwd`
-mkdir ds918-7.0.1
+mkdir ds918-7.1.0
 mkdir output
-cd ds918-7.0.1
+cd ds918-7.1.0
 
 # download redpill
 git clone --depth=1 https://github.com/RedPill-TTG/redpill-lkm.git
@@ -28,7 +28,7 @@ cd ..
 cd redpill-load
 cp ${root}/user_config.DS918+.json ./user_config.json
 ./ext-manager.sh add https://raw.githubusercontent.com/jumkey/redpill-load/develop/redpill-acpid/rpext-index.json
-./ext-manager.sh add https://raw.githubusercontent.com/pocopico/rp-ext/main/r8125/rpext-index.json
+#./ext-manager.sh add https://raw.githubusercontent.com/pocopico/rp-ext/main/r8125/rpext-index.json
 #./ext-manager.sh add https://raw.githubusercontent.com/pocopico/rp-ext/main/ax88179_178a/rpext-index.json
 
 sudo ./build-loader.sh 'DS918+' '7.1.0-42661'
